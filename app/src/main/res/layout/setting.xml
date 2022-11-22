@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="fill_parent">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<Button
+				android:id="@+id/btndate"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Set Waktu"
+				android:onClick="onClick"
+				android:gravity="right|center|end"
+				android:layout_gravity="right|center_vertical|center_horizontal|end"/>
+
+			<Button
+				android:id="@+id/btnwifi"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Set Wifi"
+				android:onClick="onClick"
+				android:gravity="right|center|end"
+				android:layout_gravity="right|center_vertical|center_horizontal|end"
+				android:textStyle="bold"
+				/>
+			<Button
+				android:id="@+id/btnset"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Aplication"
+				android:onClick="onClick"
+				android:gravity="right|center|end"
+				android:layout_gravity="right|center_vertical|center_horizontal|end"
+				android:textStyle="bold"
+			/>
+			
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/layout_vertical_titleh"
+				android:orientation="horizontal"
+				android:gravity="right|center|end"
+				android:layout_gravity="right|center_vertical|center_horizontal|end">
+
+				<TextView
+					android:id="@+id/time"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="20.00.00"
+					android:fontFamily="res/font/clock.ttf"
+					android:textColor="#ffffff"
+					android:layout_marginLeft="@dimen/layout_margin10h"
+					android:layout_marginTop="@dimen/layout_margin5h"
+					android:onClick="openreferens"
+					android:gravity="right|center|end"
+					android:layout_gravity="right|center_vertical|center_horizontal|end"/>
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Nama Masjid"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="30dp"/>
+
+			<EditText
+				android:id="@+id/settingNama"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Mushola Asy-Syahid"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Alamat"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="65dp"/>
+
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Info 1"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="76dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Info 2"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="74dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Info 3"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="74dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Info 4"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="74dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Info 5"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="74dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Info 6"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="74dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Iqomat"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="64dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:typeface="sans"
+				android:inputType="number"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Info 2"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="74dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Iqomat subuh"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="64dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:typeface="sans"
+				android:inputType="number"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Iqomat Dzuhur"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="74dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Iqomat Ashar"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="64dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:typeface="sans"
+				android:inputType="number"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Iqomat Maghrib"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="64dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:typeface="sans"
+				android:inputType="number"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Iqomat Isya"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="64dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:typeface="sans"
+				android:inputType="number"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Iqomat subuh"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="64dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:typeface="sans"
+				android:inputType="number"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Iqomat Dzuhur"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="74dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Iqomat Ashar"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="64dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:typeface="sans"
+				android:inputType="number"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Iqomat Maghrib"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="64dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:typeface="sans"
+				android:inputType="number"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="10dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Iqomat Isya"
+				android:gravity="center_vertical|center_horizontal"
+				android:layout_gravity="center"
+				android:layout_marginEnd="64dp"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:typeface="sans"
+				android:inputType="number"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</ScrollView>
+

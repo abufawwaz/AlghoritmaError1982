@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string name="app_name">Imsakiyah Digital</string>
+	<string name="mushola">MASJID DARRUSALAM</string>
+	<string name="alamat">Jl. Jawar KM 3\nKalibeber Mojotengah</string>
+	<string name="mushola2">MASJID DARRUSALAM</string>
+	<string name="alamat2">KALIBEBER MOJOTENGAH\nJL. Jawar km3</string>
+	<string name="kajiansubuh">Hadirilah dan Ikutilah !!! Kuliah Subuh setiap ba`da subuh, Kajian Ahad Pagi setiap Ahad Jam 06.00 s/d 07.00 </string>
+	<string name="kajiansubuhjihad">Hadirilah !!! Kajian Ahad Pagi Setiap Ahad Jam 06.00 sampai dengan 07.00 .........</string>
+	<string name="kajiansubuh2">Setiap Hari Jumat dan Sabtu</string>
+	<string name="luruskanshoff">Rapatkan dan Luruskan Shoff!</string>
+	<string name="textnextpray">Jadwal Sholat Hari ini</string>
+	<string name="ayat">Hello world!</string>
+
+	<string name="dp12">12dp</string>
+</resources>
