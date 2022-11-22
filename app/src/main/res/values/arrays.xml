@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="iconswarna">
+        <item>@drawable/onta</item>
+        <item>@drawable/onta</item>
+        <item>@drawable/onta</item>
+    </array>
+    <array name="warna">
+        <item>#FFFF0000</item>
+        <item>#FF00FF00</item>
+        <item>#FF0000FF</item>
+    </array>
+	<string-array name="ayats">
+		<item>the content I want searched, text1</item>
+		<item>the content I want searched, text2</item>
+		<item>the content I want searched, text3</item>
+	</string-array>  
+	
+	
+	
+</resources>
