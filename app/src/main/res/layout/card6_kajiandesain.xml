@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:id="@+id/kajianinfo"
+		android:layout_width="@dimen/layout_horizontal_cardinfo"
+		android:layout_height="@dimen/layout_vertical_info"
+		android:background="@drawable/cardinfohijau"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="@dimen/layout_horizontal_cardinfo"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@+id/pengurustitle"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:gravity="center"
+				android:text="INFO KAJIAN MINGGU INI"
+				android:textAlignment="center"
+				android:textColor="@color/colorPrimaryDark"
+				android:textSize="45sp"
+
+				android:textStyle="bold" />
+
+
+
+
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="left"
+				android:orientation="horizontal">
+
+				<LinearLayout
+					android:layout_width="304dp"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<TextView
+						android:id="@+id/kajian"
+						android:layout_width="wrap_content"
+						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_centerInParent="true"
+						android:layout_marginLeft="25dp"
+						android:text="KAJIAN"
+						android:textColor="@color/colorPrimary"
+						android:textSize="24sp"
+						android:textStyle="bold"
+						android:layout_gravity="left"
+						/>
+
+					<TextView
+						android:id="@+id/kajian1"
+						android:layout_width="wrap_content"
+						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_centerInParent="true"
+						android:layout_marginLeft="25dp"
+						android:text="AHAD PAGI"
+						android:textColor="@color/colorPrimary"
+						android:textSize="24sp"
+						android:textStyle="bold"
+						android:layout_gravity="left"
+						/>
+
+					<TextView
+						android:id="@+id/kajian2"
+						android:layout_width="match_parent"
+						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_marginLeft="25dp"
+
+						android:text="KHUTBAH JUM'AT"
+
+						android:textColor="@color/colorPrimary"
+						android:textSize="24sp"
+						android:textStyle="bold"
+						android:layout_gravity="left"
+
+						/>
+
+					<TextView
+						android:id="@+id/kajian3"
+						android:layout_width="match_parent"
+						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_centerInParent="true"
+						android:layout_marginLeft="25dp"
+
+						android:text="KULIAH SUBUH"
+						android:textColor="@color/colorPrimary"
+						android:textSize="24sp"
+						android:textStyle="bold"
+						android:layout_gravity="left"
+						/>
+				</LinearLayout>
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+				<TextView
+					android:id="@+id/kajiantgl"
+					android:layout_width="wrap_content"
+					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_centerInParent="true"
+					android:layout_marginLeft="20dp"
+					android:text="HARI"
+					android:textColor="@color/colorPrimary"
+					android:textSize="24sp"
+					android:textStyle="bold" />
+
+					<TextView
+						android:id="@+id/kajiantgl1"
+						android:layout_width="196dp"
+						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_centerInParent="true"
+						android:layout_marginLeft="20dp"
+						android:text="AHAD WAGE"
+						android:textColor="@color/colorPrimary"
+						android:textSize="24sp"
+						android:textStyle="bold" />
+
+					<TextView
+						android:id="@+id/kajiantgl2"
+						android:layout_width="184dp"
+						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_centerInParent="true"
+						android:layout_marginLeft="25dp"
+
+						android:text="JUMAT PON"
+
+						android:textColor="@color/colorPrimary"
+						android:textSize="24sp"
+						android:textStyle="bold" />
+					<TextView
+						android:id="@+id/kajiantgl3"
+						android:layout_width="match_parent"
+						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_centerInParent="true"
+
+						android:text="HARI INI"
+
+						android:textColor="@color/colorPrimary"
+						android:textSize="24sp"
+						android:textStyle="bold"
+						android:layout_marginLeft="25dp"
+						/>
+				</LinearLayout>
+
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="left"
+				android:orientation="horizontal">
+				<TextView
+					android:id="@+id/pembicara"
+					android:layout_width="wrap_content"
+					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_centerInParent="true"
+					android:layout_marginLeft="20dp"
+					android:text="KAJIAN AHAD PAGI"
+					android:textColor="@color/colorPrimary"
+					android:textSize="24sp"
+					android:textStyle="bold" />
+				<TextView
+					android:id="@+id/ket"
+					android:layout_width="wrap_content"
+					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_centerInParent="true"
+					android:layout_marginLeft="20dp"
+					android:text="Ket"
+					android:textColor="@color/colorPrimary"
+					android:textSize="24sp"
+					android:textStyle="bold" />
+
+				<TextView
+					android:id="@+id/kajianpembicara3"
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_centerInParent="true"
+					android:gravity="center"
+					android:text="PEMBICARA"
+					android:textAlignment="center"
+					android:textColor="@color/colorPrimary"
+					android:textSize="24sp"
+					android:textStyle="bold"
+					android:layout_marginLeft="25dp"
+					/>
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="left"
+				android:orientation="horizontal">
+				<TextView
+					android:id="@+id/kajian4"
+					android:layout_width="wrap_content"
+					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_centerInParent="true"
+					android:layout_marginLeft="20dp"
+					android:text="KAJIAN KULTUM"
+					android:textColor="@color/colorPrimary"
+					android:textSize="24sp"
+					android:textStyle="bold" />
+				<TextView
+					android:id="@+id/kajiantgl4"
+					android:layout_width="wrap_content"
+					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_centerInParent="true"
+					android:layout_marginLeft="20dp"
+					android:text="HARI TANGGAL"
+					android:textColor="@color/colorPrimary"
+					android:textSize="24sp"
+					android:textStyle="bold" />
+
+				<TextView
+					android:id="@+id/kajianpembicara4"
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_centerInParent="true"
+					android:gravity="center"
+					android:text="PEMBICARA"
+					android:textAlignment="center"
+					android:textColor="@color/colorPrimary"
+					android:textSize="24sp"
+					android:textStyle="bold"
+					android:layout_marginLeft="25dp"
+					/>
+			</LinearLayout>
+		</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>
+

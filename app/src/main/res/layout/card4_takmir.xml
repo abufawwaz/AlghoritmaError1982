@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:id="@+id/cardinfo4"
+		android:layout_width="@dimen/layout_horizontal_cardinfo"
+		android:layout_height="@dimen/layout_vertical_info"
+		android:background="@drawable/textlinesungu"
+		android:orientation="vertical"
+		android:gravity="center_horizontal">
+		<LinearLayout
+			android:layout_width="@dimen/layout_horizontal_cardinfo"
+			android:layout_height="@dimen/layout_vertical_info"
+			android:background="@color/white"
+			android:orientation="vertical"
+			android:gravity="center_horizontal">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="STRUKTUR ORGANISASI TA'MIR"
+			android:textColor="@color/md_blue_A700"
+			android:textSize="@dimen/TitleTexPengurus"
+			android:textStyle="bold"
+			android:background="@drawable/textlinesungu"
+			android:padding="10dp"
+			android:layout_marginTop="5dp"
+			/>
+		<TextView
+			android:id="@+id/ketuatakmir"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="KETUA TA'MIR\nNURROFIQ"
+			android:textColor="@color/md_black_1000"
+			android:textSize="@dimen/TexPengurus"
+			android:textStyle="bold"
+			android:background="@drawable/textlinesungu"
+			android:padding="10dp"
+			android:layout_marginTop="5dp"
+			android:textAlignment="center"
+			android:gravity="center_horizontal" />
+		<TextView
+			android:id="@+id/wakilketuatakmir"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="WAKIL KETUA TA'MIR\nMi'roj Mustajib"
+			android:textColor="@color/md_blue_600"
+			android:textSize="@dimen/TexPengurus"
+			android:textStyle="bold"
+			android:background="@drawable/textlinesungu"
+			android:padding="10dp"
+			android:layout_marginTop="5dp"
+			android:textAlignment="center"
+			android:gravity="center_horizontal" />
+<LinearLayout
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:background="@drawable/textlines"
+	android:padding="5dp"
+	android:layout_marginTop="5dp"
+	>
+
+	<TextView
+		android:id="@+id/idaroh"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:text="IDAROH (ADMINISTRASI)\nBENDAHARA :\nA.Marwoto\nB. Yuli Faridin\n\n\n"
+		android:textColor="@color/md_blue_A700"
+		android:textSize="@dimen/TexPengurus"
+		android:textStyle="bold"
+		android:background="@drawable/textlinesungu"
+		android:padding="10dp"
+		android:layout_marginTop="5dp"
+		android:textAlignment="center"
+		android:gravity="center_horizontal"
+		/>
+		<TextView
+		android:id="@+id/idaroh2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:text="IDAROH (ADMINISTRASI)\nSEKRETARIS \nA.Dwi Raharjo\nB. Lim Bangun\n\n\n"
+		android:textColor="@color/md_black_1000"
+		android:textSize="@dimen/TexPengurus"
+		android:textStyle="bold"
+		android:background="@drawable/textlinesungu"
+		android:padding="10dp"
+		android:layout_marginTop="5dp"
+		android:textAlignment="center"
+		android:gravity="center_horizontal"
+		/>
+
+	<TextView
+		android:id="@+id/imaroh"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:text="IMAROH (PEMAKMURAN)\n1. Muslimin\n2. Qosdan Dawami,lc.\n3. Fikrian Fajar Al Farobi\n4. Yuli Faridin\n\n"
+		android:textColor="@color/md_black_1000"
+		android:textSize="@dimen/TexPengurus"
+		android:textStyle="bold"
+		android:background="@drawable/textlinesungu"
+		android:padding="10dp"
+		android:layout_marginTop="5dp"
+		android:textAlignment="center"
+		android:gravity="center_horizontal" />
+	<TextView
+		android:id="@+id/riayah"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="10dp"
+		android:text="RI'YAH (PEMELIHARAAN)\n1.Mujtahidin\n2. Mubarok\n3. Qodam Margono\n4. Sholeh\n5. Slamet Riyadi\n6. Bambang Pramono"
+		android:textColor="@color/md_blue_A700"
+		android:textSize="@dimen/TexPengurus"
+		android:textStyle="bold"
+		android:background="@drawable/textlinesungu"
+		android:padding="5dp"
+		android:layout_marginTop="5dp"
+		android:textAlignment="center"
+		android:gravity="center_horizontal" />
+</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>
+

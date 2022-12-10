@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:id="@+id/cardinfo3"
+		android:layout_width="@dimen/layout_horizontal_cardinfo"
+		android:layout_height="@dimen/layout_vertical_info"
+
+		android:background="#40000000"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="@dimen/layout_horizontal_cardinfo"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:orientation="vertical">
+			<TextView
+				android:id="@+id/iqomattimerinfo"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:text=""
+				android:textColor="@color/white"
+				android:textSize="45sp"
+				android:textStyle="bold"
+				android:gravity="center"
+
+				android:textAlignment="center"
+				/>
+			<TextView
+				android:id="@+id/iqomattimerinfo2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:text=""
+				android:textColor="@color/white"
+				android:textSize="45sp"
+				android:textStyle="bold"
+				android:gravity="center"
+
+				android:textAlignment="center"
+				/>
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:orientation="horizontal">
+
+				<TextView
+					android:id="@+id/textprogres2"
+					android:layout_width="wrap_content"
+					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_centerInParent="true"
+					android:text="Menit :"
+					android:textColor="@color/white"
+					android:textSize="24sp"
+					android:textStyle="bold" />
+
+				<ProgressBar
+					android:id="@+id/progressBar"
+					style="?android:attr/progressBarStyleHorizontal"
+					android:layout_width="match_parent"
+					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_gravity="center_vertical|center_horizontal"
+					android:layout_marginStart="10dp"
+					android:layout_marginEnd="10dp"
+
+					android:gravity="center"
+					android:indeterminate="false"
+					android:indeterminateTint="@color/jashar"
+					android:max="100"
+					android:minWidth="@dimen/layout_horizontal_progress"
+					android:minHeight="@dimen/layout_vertical_progress"
+					android:progress="10"
+					android:theme="@style/progressBarBlue"
+
+					/>
+
+			</LinearLayout>
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:orientation="horizontal">
+
+				<TextView
+					android:id="@+id/textprogres1"
+					android:layout_width="wrap_content"
+					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_centerInParent="true"
+					android:text="Detik  :"
+					android:textColor="@color/white"
+					android:textSize="24sp"
+					android:textStyle="bold" />
+
+				<ProgressBar
+					android:id="@+id/progressBarS"
+					style="?android:attr/progressBarStyleHorizontal"
+					android:layout_width="wrap_content"
+					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_gravity="center_vertical|center_horizontal"
+					android:layout_marginStart="10dp"
+					android:layout_marginEnd="10dp"
+					android:gravity="center"
+					android:indeterminate="false"
+					android:indeterminateTint="@color/jashar"
+					android:max="100"
+					android:minWidth="@dimen/layout_horizontal_progress"
+					android:minHeight="@dimen/layout_vertical_progress"
+					android:progress="1"
+					android:theme="@style/progressBarRed" />
+
+			</LinearLayout>
+
+
+
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>
+
