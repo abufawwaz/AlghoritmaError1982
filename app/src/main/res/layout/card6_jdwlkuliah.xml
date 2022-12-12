@@ -7,8 +7,9 @@
 
 	<LinearLayout
 		android:id="@+id/cardinfo6"
-		android:layout_width="@dimen/layout_horizontal_cardinfo"
-		android:layout_height="@dimen/layout_vertical_info"
+		android:layout_width="@dimen/_530sdp"
+		android:layout_height="@dimen/_190sdp"
+		android:layout_margin="@dimen/_5sdp"
 		android:background="@drawable/kajian2"
 		android:orientation="vertical"/>
 </LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+    <TextView
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="wrap_content"
+        android:text="Nama Masjid"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/md_black_1000"
+        />
+    <EditText
+        android:id="@+id/namamasjid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masjid Darusalam"
+        />
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+    <TextView
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="wrap_content"
+        android:text="Alamat Masjid"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/md_black_1000"
+        />
+    <EditText
+        android:id="@+id/alamatmasjid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="alamat"
+        />
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="wrap_content"
+            android:text="Text Footer / RunningText"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+
+            />
+        <EditText
+            android:id="@+id/notefooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Text Berjalan "
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

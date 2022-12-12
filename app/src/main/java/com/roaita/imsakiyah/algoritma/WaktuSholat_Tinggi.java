@@ -57,7 +57,7 @@ public class WaktuSholat_Tinggi {
 
         double timezone= 7 ;
         double tinggilokasi= 1000 ;
-        double sudutsubuh= -20;
+        double sudutsubuh= -19;
         double sudutisya=-18;
         double ihtiyat=0;
 		double ihtiyatsubuh=0.05;
@@ -320,8 +320,9 @@ public class WaktuSholat_Tinggi {
 		String wktimsak   = (jimsak) + ":"+ ((int)qimsak);//+ ":"+ ((int)nimsak);
 
         String wktsubuh   = (jsubuh) + ":"+ ((int)qsubuh);//+ ":"+ ((int)nsubuh);
-            String mntterbit =""+((int)qterbit);
-            if ( ((int)qterbit)>10)mntterbit =""+((int)qterbit);
+            String mntterbit ="0"+((int)qterbit);
+            if ( ((int)qterbit)>9)mntterbit =""+((int)qterbit);
+
         String wktterbit  =  (jterbit) + ":"+ mntterbit;//+ ":"+ ((int)nterbit);
 
         String wktdzuhur  = (jdzuhur) + ":"+ ((int)qdzuhur);//+ ":"+ ((int)ndzuhur);
@@ -329,8 +330,10 @@ public class WaktuSholat_Tinggi {
         String wktashar   = (jashar) + ":"+ ((int)qashar);//+ ":"+ ((int)nashar);
 
         String wktmaghrib = (jmaghrib) + ":"+ ((int)qmaghrib);//+ ":"+ ((int)nmaghrib);
+            String mqisya ="0"+((int)qisya);
+            if ( ((int)qisya)>9)mntterbit =""+((int)qisya);
 
-        String wktisya    = (jisya) + ":"+ ((int)qisya);//+ ":"+ ((int)nisya);
+            String wktisya    = (jisya) + ":"+ mqisya;//+ ":"+ ((int)nisya);
 
 		
 		return new String[] {wktimsak,wktsubuh,wktterbit,wktdzuhur,wktashar,wktmaghrib,wktisya};

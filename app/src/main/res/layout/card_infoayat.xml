@@ -7,8 +7,9 @@
 
 	<LinearLayout
 		android:id="@+id/cardinfo"
-		android:layout_width="@dimen/layout_horizontal_cardinfo"
-		android:layout_height="@dimen/layout_vertical_info"
+		android:layout_width="@dimen/_530sdp"
+		android:layout_height="@dimen/_190sdp"
+		android:layout_margin="@dimen/_5sdp"
 		android:background="@drawable/cardinfo"
 		android:orientation="vertical"
 		android:layout_gravity="center_vertical"
@@ -18,9 +19,9 @@
 		<TextView
 			android:id="@+id/vinfo"
 			android:layout_width="match_parent"
-			android:layout_height="@dimen/layout_vertical_info"
+			android:layout_height="wrap_content"
 			android:layout_gravity="center_vertical|center_horizontal"
-
+			android:minHeight="@dimen/_100sdp"
 			android:gravity="center"
 			android:text=""
 			android:textColor="#000"
@@ -35,7 +36,6 @@
 			android:layout_gravity="center"
 			android:gravity="center"
 			android:text=""
-
 			android:textColor="#000"
 			android:visibility="gone" />
 

@@ -4,14 +4,11 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="@drawable/a3"
-    android:id="@+id/layout_bg"
-    >
+    android:id="@+id/layout_bg">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-
     <include layout="@layout/main_header" />
     <include layout="@layout/main_medium" />
     <include layout="@layout/main_footer" />

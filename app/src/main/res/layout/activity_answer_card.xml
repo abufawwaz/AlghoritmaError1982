@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/_5sdp"
+    android:paddingRight="@dimen/_5sdp"
+    android:paddingTop="@dimen/_5sdp"
+    android:paddingBottom="@dimen/_5sdp"
+    android:orientation="vertical"
+    tools:context="com.roaita.imsakiyah.notes.AnswerCard">
+
+    <TextView
+        android:id="@+id/title_answercard"
+        android:layout_width="fill_parent"
+        android:text="Title"
+        android:textSize="20dp"
+        android:padding="5dp"
+
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#CCC" />
+    <ScrollView
+        android:layout_marginTop="20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/content_answercard"
+            android:layout_width="fill_parent"
+            android:text="Content goes here which will be a lot"
+            android:textSize="20dp"
+            android:padding="5dp"
+
+            android:layout_height="wrap_content" />
+        </ScrollView>
+</LinearLayout>

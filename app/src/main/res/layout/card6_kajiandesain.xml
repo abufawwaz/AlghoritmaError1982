@@ -7,13 +7,14 @@
 
 	<LinearLayout
 		android:id="@+id/kajianinfo"
-		android:layout_width="@dimen/layout_horizontal_cardinfo"
-		android:layout_height="@dimen/layout_vertical_info"
+		android:layout_width="@dimen/_530sdp"
+		android:layout_height="@dimen/_190sdp"
+		android:layout_margin="@dimen/_5sdp"
 		android:background="@drawable/cardinfohijau"
 		android:orientation="vertical">
 
 		<LinearLayout
-			android:layout_width="@dimen/layout_horizontal_cardinfo"
+			android:layout_width="@dimen/_538sdp"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
 			android:orientation="vertical">
@@ -50,7 +51,7 @@
 					<TextView
 						android:id="@+id/kajian"
 						android:layout_width="wrap_content"
-						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_height="wrap_content"
 						android:layout_centerInParent="true"
 						android:layout_marginLeft="25dp"
 						android:text="KAJIAN"
@@ -63,7 +64,7 @@
 					<TextView
 						android:id="@+id/kajian1"
 						android:layout_width="wrap_content"
-						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_height="wrap_content"
 						android:layout_centerInParent="true"
 						android:layout_marginLeft="25dp"
 						android:text="AHAD PAGI"
@@ -76,7 +77,7 @@
 					<TextView
 						android:id="@+id/kajian2"
 						android:layout_width="match_parent"
-						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_height="wrap_content"
 						android:layout_marginLeft="25dp"
 
 						android:text="KHUTBAH JUM'AT"
@@ -91,7 +92,7 @@
 					<TextView
 						android:id="@+id/kajian3"
 						android:layout_width="match_parent"
-						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_height="wrap_content"
 						android:layout_centerInParent="true"
 						android:layout_marginLeft="25dp"
 
@@ -110,7 +111,7 @@
 				<TextView
 					android:id="@+id/kajiantgl"
 					android:layout_width="wrap_content"
-					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_height="wrap_content"
 					android:layout_centerInParent="true"
 					android:layout_marginLeft="20dp"
 					android:text="HARI"
@@ -121,7 +122,7 @@
 					<TextView
 						android:id="@+id/kajiantgl1"
 						android:layout_width="196dp"
-						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_height="wrap_content"
 						android:layout_centerInParent="true"
 						android:layout_marginLeft="20dp"
 						android:text="AHAD WAGE"
@@ -132,7 +133,7 @@
 					<TextView
 						android:id="@+id/kajiantgl2"
 						android:layout_width="184dp"
-						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_height="wrap_content"
 						android:layout_centerInParent="true"
 						android:layout_marginLeft="25dp"
 
@@ -144,7 +145,7 @@
 					<TextView
 						android:id="@+id/kajiantgl3"
 						android:layout_width="match_parent"
-						android:layout_height="@dimen/layout_vertical_progress"
+						android:layout_height="wrap_content"
 						android:layout_centerInParent="true"
 
 						android:text="HARI INI"
@@ -165,7 +166,7 @@
 				<TextView
 					android:id="@+id/pembicara"
 					android:layout_width="wrap_content"
-					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_height="wrap_content"
 					android:layout_centerInParent="true"
 					android:layout_marginLeft="20dp"
 					android:text="KAJIAN AHAD PAGI"
@@ -175,7 +176,7 @@
 				<TextView
 					android:id="@+id/ket"
 					android:layout_width="wrap_content"
-					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_height="wrap_content"
 					android:layout_centerInParent="true"
 					android:layout_marginLeft="20dp"
 					android:text="Ket"
@@ -186,7 +187,7 @@
 				<TextView
 					android:id="@+id/kajianpembicara3"
 					android:layout_width="match_parent"
-					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_height="wrap_content"
 					android:layout_centerInParent="true"
 					android:gravity="center"
 					android:text="PEMBICARA"
@@ -205,7 +206,7 @@
 				<TextView
 					android:id="@+id/kajian4"
 					android:layout_width="wrap_content"
-					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_height="wrap_content"
 					android:layout_centerInParent="true"
 					android:layout_marginLeft="20dp"
 					android:text="KAJIAN KULTUM"
@@ -215,7 +216,7 @@
 				<TextView
 					android:id="@+id/kajiantgl4"
 					android:layout_width="wrap_content"
-					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_height="wrap_content"
 					android:layout_centerInParent="true"
 					android:layout_marginLeft="20dp"
 					android:text="HARI TANGGAL"
@@ -226,7 +227,7 @@
 				<TextView
 					android:id="@+id/kajianpembicara4"
 					android:layout_width="match_parent"
-					android:layout_height="@dimen/layout_vertical_progress"
+					android:layout_height="wrap_content"
 					android:layout_centerInParent="true"
 					android:gravity="center"
 					android:text="PEMBICARA"

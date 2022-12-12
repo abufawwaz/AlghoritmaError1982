@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--
+    <dimen name="activity_horizontal_margin">16.0dip</dimen>
+    <dimen name="activity_vertical_margin">16.0dip</dimen>
+    <dimen name="layout_margin5">5dp</dimen>
 
+    <dimen name="layout_margin10">10dp</dimen>
+    <dimen name="layout_vertical_title">90dp</dimen>
+    <dimen name="layout_vertical_info">300dp</dimen>
+    <dimen name="layout_horizontal_cardinfo">950dp</dimen>
+
+    <dimen name="layout_vertical_sholat">105dp</dimen>
+    <dimen name="layout_horizontal_sholat">125dp</dimen>
+    <dimen name="layout_horizontal_maghrib">135dp</dimen>
+
+    <dimen name="layout_vertical_next">150dp</dimen>
+    <dimen name="layout_vertical_foot">150dp</dimen>
+
+    <dimen name="layout_vertical_progress">50dp</dimen>
+    <dimen name="layout_horizontal_progress">500dp</dimen>
+    <dimen name="minHeight">48dp</dimen>
+    <dimen name="JadwalMinHeight">40dp</dimen>
+
+
+    <dimen name="Textmasjid">35sp</dimen>
+    <dimen name="Textalamat">18sp</dimen>
+
+    <dimen name="Texttgl">20sp</dimen>
+    <dimen name="TextTime">50sp</dimen>
+
+    <dimen name="Textinfo">170sp</dimen>
+    <dimen name="Textinfo2">170sp</dimen>
+    <dimen name="TextjadwalNama">28dp</dimen>
+    <dimen name="Textjadwal">32dp</dimen>
+
+    <dimen name="Textiqomat">12dp</dimen>
+
+    <dimen name="Textfoot">32dp</dimen>
+    <dimen name="Textfootbtn">25dp</dimen>
+
+    <dimen name="Textayat">12dp</dimen>
+    <dimen name="TexPengurus">10dp</dimen>
+    <dimen name="TitleTexPengurus">16dp</dimen>
+    <dimen name="Textjadwalset">15dp</dimen>
+    <dimen name="TextKeuanganset">16dp</dimen>
+    <dimen name="TextKeuanganEdit">18dp</dimen>
+
+-->
 
 </resources>

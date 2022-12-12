@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/_1sdp">
+
+<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+
+        android:orientation="horizontal">
+
+
+    <Button
+        android:id="@+id/nextpray"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_22sdp"
+        android:layout_gravity="left"
+        android:background="@drawable/next"
+        android:gravity="center_vertical"
+        android:onClick="testtimer"
+        android:paddingLeft="@dimen/_1sdp"
+        android:paddingRight="@dimen/_2sdp"
+        android:text=""
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_10ssp"
+        android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/footnote"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_marginLeft="1.0dip"
+                android:background="@color/foot_bg"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:paddingLeft="1.0dip"
+                android:singleLine="true"
+                android:text="@string/kajiansubuh"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold|normal"
+                android:typeface="sans" />
+            <Button
+                android:id="@+id/kasmsjd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/pref"
+                android:gravity="right|center_vertical"
+                android:onClick="testtimer"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="Saldo Kas Masjid"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--sini jadwal-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/jadwal_bg"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:textSize="@dimen/_13ssp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="IMSAK"
+                android:background="@color/md_blue_grey_800"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+
+                />
+
+            <TextView
+                android:id="@+id/imsak"
+                android:textSize="@dimen/_18sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/md_cyan_A700"
+                android:fontFamily="@font/clock"
+                android:gravity="center"
+                 android:onClick="testtimer"
+                android:text="04.30"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="@dimen/_13ssp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="SUBUH"
+                android:background="@color/md_purple_900"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+
+                />
+
+            <TextView
+                android:id="@+id/subuh"
+                android:textSize="@dimen/_18sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/md_purple_A700"
+                android:fontFamily="@font/clock"
+                android:gravity="center"
+                android:onClick="testtimer"
+                android:text="04.30"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="@dimen/_13ssp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="TERBIT"
+                android:background="@color/md_black_1000"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:id="@+id/terbit"
+                android:textSize="@dimen/_18sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/md_black_1000"
+                android:fontFamily="@font/clock"
+                android:gravity="center"
+
+                android:onClick="testtimer"
+                android:text="04.00"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="@dimen/_13ssp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@color/md_blue_grey_900"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:text="DZUHUR"
+
+                />
+
+            <TextView
+                android:id="@+id/dzuhur"
+                android:textSize="@dimen/_18sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/md_blue_grey_700"
+                android:fontFamily="@font/clock"
+                android:gravity="center"
+
+                android:onClick="testtimer"
+                android:text="04.00"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="@dimen/_13ssp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@color/md_green_700"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:text="ASHAR" />
+
+            <TextView
+                android:id="@+id/ashar"
+                android:textSize="@dimen/_18sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/md_green_900"
+                android:fontFamily="@font/clock"
+                android:gravity="center"
+
+                android:onClick="testtimer"
+                android:text="04.00"
+                android:textColor="#ffffff"
+
+                android:textStyle="bold" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="@dimen/_13ssp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@color/md_blue_900"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:text="MAGHRIB" />
+
+            <TextView
+                android:id="@+id/maghrib"
+                android:textSize="@dimen/_18sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/md_blue_900"
+                android:fontFamily="@font/clock"
+                android:gravity="center"
+                android:onClick="testtimer"
+                android:text="04.00"
+                android:textColor="#ffffff"
+                 android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="@dimen/_13ssp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@color/md_deep_orange_A700"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:text="ISYA"
+
+                />
+
+            <TextView
+                android:id="@+id/isya"
+                android:textSize="@dimen/_18sdp"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/md_deep_orange_900"
+                android:fontFamily="@font/clock"
+                android:gravity="center"
+                android:onClick="testtimer"
+                android:text="04.00"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <!--enderror-->
+
+
+</LinearLayout>
