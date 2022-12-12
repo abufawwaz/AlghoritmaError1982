@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_margin="@dimen/_1sdp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:onClick="testtimer"
+     >
+
+        <LinearLayout
+            android:id="@+id/layscroll"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:gravity="center">
+
+            <include layout="@layout/card_infoayat" />
+            <include layout="@layout/card2_info" />
+            <include layout="@layout/card3_timeriqomat" />
+            <include layout="@layout/card4_pengurus" />
+            <include layout="@layout/card5_jdwlkajian" />
+            <include layout="@layout/card6_jdwlkuliah" />
+            <include layout="@layout/card_keuangan_activity" />
+            <include layout="@layout/card2_info" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+</LinearLayout>

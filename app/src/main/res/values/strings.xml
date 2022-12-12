@@ -2,8 +2,8 @@
 <resources>
 
 	<string name="app_name">Imsakiyah Digital</string>
-	<string name="mushola">MASJID DARRUSALAM</string>
-	<string name="alamat">Jl. Jawar KM 3\nKalibeber Mojotengah</string>
+	<string name="mushola">MASJID DARUSSALAM</string>
+	<string name="alamat">Jl. Jawar KM 3 Kalibeber Mojotengah</string>
 	<string name="mushola2">MASJID DARRUSALAM</string>
 	<string name="alamat2">KALIBEBER MOJOTENGAH\nJL. Jawar km3</string>
 	<string name="kajiansubuh">Hadirilah dan Ikutilah !!! Kuliah Subuh setiap ba`da subuh, Kajian Ahad Pagi setiap Ahad Jam 06.00 s/d 07.00 </string>
@@ -12,6 +12,12 @@
 	<string name="luruskanshoff">Rapatkan dan Luruskan Shoff!</string>
 	<string name="textnextpray">Jadwal Sholat Hari ini</string>
 	<string name="ayat">Hello world!</string>
-
+	<string name="infotimer">Timer menit antara Adzan dan Iqomat</string>
 	<string name="dp12">12dp</string>
+	<string name="infodate">KAMIS, KLIWON \n30 JUMADAL AKHIRAH 1444\n 12 DESEMBER 2022</string>
+	<string name="delete">Delete</string>
+	<string name="action_settings">Settings</string>
+	<string name="title_activity_new_notes">New Notes</string>
+	<string name="title_activity_answer_card">AnswerCard</string>
+
 </resources>

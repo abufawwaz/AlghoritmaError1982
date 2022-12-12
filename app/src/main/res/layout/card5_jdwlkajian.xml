@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:id="@+id/cardinfo5"
+		android:layout_width="@dimen/_530sdp"
+		android:layout_height="@dimen/_190sdp"
+		android:layout_margin="@dimen/_5sdp"
+		android:background="@drawable/kajian1"
+		android:orientation="vertical"/>
+</LinearLayout>
+

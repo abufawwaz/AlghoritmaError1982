@@ -4,8 +4,11 @@ import android.annotation.SuppressLint;
 import android.app.*;
 import android.content.*;
 import android.content.pm.*;
+import android.media.AudioManager;
 import android.media.*;
+import android.provider.MediaStore.Audio.*;
 import android.os.*;
+import android.text.SpannableString;
 import android.view.*;
 import android.widget.*;
 import java.util.*;
@@ -17,28 +20,125 @@ import android.graphics.*;
 
 import com.roaita.imsakiyah.R;
 import com.roaita.imsakiyah.algoritma.*;
+import com.roaita.imsakiyah.notes.SQLiteHelper;
 import com.roaita.imsakiyah.util.Audio;
-
-import android.provider.*;
 
 public class MainActivity extends Activity 
 {
-	private LinearLayout cardinfo, cardinfo2, cardinfo3,cardinfo4,pengurus,kajian1,kajian2;
+	private LinearLayout cardinfo, cardinfo2, cardinfo3,cardinfo4,pengurus,kajian1,kajian2,keuanganlayoout;
 	int statusviewcard =0; //timer run 1, timer of 0
 	private int focusinfo =0;
-	public void openreferens(View v) {
-		//menamp8lkan change keyboard
-		//	this.startActivity(new Intent("com.myfawwaz.simplekeyboard.softkeyboard.ImePreferences"));
-		this.startActivity(new Intent("AppPreferences"));
-		//andorid.Settings.DatePickerDialog
+
+	/** Deklarasi Edit Preferences dan mengubah data
+	 *  yang memiliki key KEY_USERNAME_SEDANG_LOGIN dengan parameter username */
+	private static SharedPreferences pref;
+	private String tmrshu = "timerSubuh",tmrdz="timerDzuhur",tmrAs= "timerAshar",tmrmag="timerMaghrib",tmrIsy="timerIsya";
+	private String setnamamasjid ="namamasjid",setalamat="alamat",setfooter ="footer";
+
+	public static void setDataSave(String namadata, String data){
+		SharedPreferences.Editor editor = pref.edit();
+		editor.putString(namadata, data);
+		editor.apply();
+	}
+	/** Mengembalikan nilai dari key KEY_USERNAME_SEDANG_LOGIN berupa String */
+	public static String getDataSave(String namadata){
+		return pref.getString(namadata,"");
+	}
+
+	public void setKeunganData() {
+
+		EditText eJmtke, eTgl, ePmskn, eplgrn, esaldo;
+		EditText eJmtke2, eTgl2, ePmskn2, eplgrn2, esaldo2;
+		EditText eJmtke3, eTgl3, ePmskn3, eplgrn3, esaldo3;
+		EditText eJmtke4, eTgl4, ePmskn4, eplgrn4, esaldo4, esaldoakhir;
+		 String seJmtke = "jumatI", seTgl = "tglI", sePmskn = "pemasukanI", seplgrn = "pengeluaranI", sesaldo = "saldoI";
+		 String seJmtke2 = "jumatII", seTgl2 = "tglII", sePmskn2 = "pemasukanII", seplgrn2 = "pengeluaranII", sesaldo2 = "saldoII";
+		 String seJmtke3 = "jumatIII", seTgl3 = "tglIII", sePmskn3 = "pemasukanIII", seplgrn3 = "pengeluaranIII", sesaldo3 = "saldoIII";
+		 String seJmtke4 = "jumatIV", seTgl4 = "tglIV", sePmskn4 = "pemasukanIV", seplgrn4 = "pengeluaranIV", sesaldo4 = "saldoIV", sesaldoakhir ="saldoakhir";
+		Button Btnadd;
+
+		eJmtke = (EditText) findViewById(R.id.jumatke);
+		eTgl = (EditText) findViewById(R.id.pmskntgl);
+		ePmskn = (EditText) findViewById(R.id.pmsknnominal);
+		eplgrn = (EditText) findViewById(R.id.pglrnnominal);
+		esaldo = (EditText) findViewById(R.id.sldonominal);
+
+		eJmtke2 = (EditText) findViewById(R.id.jumatke2);
+		eTgl2 = (EditText) findViewById(R.id.pmskntgl2);
+		ePmskn2 = (EditText) findViewById(R.id.pmsknnominal2);
+		eplgrn2 = (EditText) findViewById(R.id.pglrnnominal2);
+		esaldo2 = (EditText) findViewById(R.id.sldonominal2);
+
+		eJmtke3 = (EditText) findViewById(R.id.jumatke3);
+		eTgl3 = (EditText) findViewById(R.id.pmskntgl3);
+		ePmskn3 = (EditText) findViewById(R.id.pmsknnominal3);
+		eplgrn3 = (EditText) findViewById(R.id.pglrnnominal3);
+		esaldo3 = (EditText) findViewById(R.id.sldonominal3);
+
+		eJmtke4 = (EditText) findViewById(R.id.jumatke4);
+		eTgl4 = (EditText) findViewById(R.id.pmskntgl4);
+		ePmskn4 = (EditText) findViewById(R.id.pmsknnominal4);
+		eplgrn4 = (EditText) findViewById(R.id.pglrnnominal4);
+		esaldo4 = (EditText) findViewById(R.id.sldonominal4);
+
+		esaldoakhir = (EditText) findViewById(R.id.saldoakhir);
+
+		eJmtke.setText(getDataSave(seJmtke));
+		eJmtke2.setText(getDataSave(seJmtke2));
+		eJmtke3.setText(getDataSave(seJmtke3));
+		eJmtke4.setText(getDataSave(seJmtke4));
+
+		eTgl.setText(getDataSave(seTgl));
+		eTgl2.setText(getDataSave(seTgl2));
+		eTgl3.setText(getDataSave(seTgl3));
+		eTgl4.setText(getDataSave(seTgl4));
+
+		ePmskn.setText(getDataSave(sePmskn));
+		ePmskn2.setText(getDataSave(sePmskn2));
+		ePmskn3.setText(getDataSave(sePmskn3));
+		ePmskn4.setText(getDataSave(sePmskn4));
+
+		eplgrn.setText(getDataSave(seplgrn));
+		eplgrn2.setText(getDataSave(seplgrn2));
+		eplgrn3.setText(getDataSave(seplgrn3));
+		eplgrn4.setText(getDataSave(seplgrn4));
+
+		esaldo.setText(getDataSave(sesaldo));
+		esaldo2.setText(getDataSave(sesaldo2));
+		esaldo3.setText(getDataSave(sesaldo3));
+		esaldo4.setText(getDataSave(sesaldo4));
+
+		esaldoakhir.setText(getDataSave(sesaldoakhir));
 
 	}
-	
+
+	public void setTimerIqomat() {
+		if (!getDataSave(tmrshu).toString().trim().isEmpty())timersubuh=intervalmenit * Integer.parseInt(getDataSave(tmrshu));
+		if (!getDataSave(tmrdz).toString().trim().isEmpty())timersubuh=intervalmenit * Integer.parseInt(getDataSave(tmrdz));
+		if (!getDataSave(tmrAs).toString().trim().isEmpty())timersubuh=intervalmenit * Integer.parseInt(getDataSave(tmrAs));
+		if (!getDataSave(tmrmag).toString().trim().isEmpty())timersubuh=intervalmenit * Integer.parseInt(getDataSave(tmrmag));
+		if (!getDataSave(tmrIsy).toString().trim().isEmpty())timersubuh=intervalmenit * Integer.parseInt(getDataSave(tmrIsy));
+		if (!getDataSave(tmrshu).toString().trim().isEmpty())startTimetest=intervalmenit * Integer.parseInt(getDataSave(tmrshu));
+
+
+		if (!getDataSave(setnamamasjid).toString().trim().isEmpty())TMasjid.setText(getDataSave(setnamamasjid));
+		if (!getDataSave(setalamat).toString().trim().isEmpty())Talamat.setText(getDataSave(setalamat));
+		if (!getDataSave(setfooter).toString().trim().isEmpty())Tfootnote.setText(getDataSave(setfooter));
+
+
+	}
+
+
+
+
+
 	public void testtimer(View v) {
 		String waktusholat = (String) getText(v.getId());
 		shubuhtime(startTimetest,1000);
 		nextSholat = "Dzuhur "+nDhuhur;
 		audio.playClick();
+		startActivity(new Intent(this, MenuActivity.class));
+
 	}
 
 	public String getKajian (Calendar tgl,String Pasaran,String Hari,String Kajian){
@@ -98,22 +198,18 @@ MUSLIMAN LILLAH
 		return(getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEVISION)
 			|| getPackageManager().hasSystemFeature(PackageManager.FEATURE_LEANBACK));
 	}
-	
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-	//	boolean tvorhp = isDirectToTV();
-     //  setContentView(R.layout.layouthp_vertical);
-		setContentView(R.layout.jadwal_main);
-		//setContentView(R.layout.layout_hp);
-
+		setContentView(R.layout.activity_main_layout);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		
-		 mPlayer = MediaPlayer.create(this, R.raw.alert);
-		// mPlayer.start();
-		//time
+
+		pref = getSharedPreferences("mypreferences", MODE_PRIVATE);
+		mPlayer = MediaPlayer.create(this, R.raw.alert);
+
 		timer = new Timer();
 		myTimerTask = new MyTimerTask();
 		/*
@@ -124,8 +220,8 @@ MUSLIMAN LILLAH
 		cardinfo = (LinearLayout) findViewById(R.id.cardinfo);
 		cardinfo2 = (LinearLayout) findViewById(R.id.cardinfo2);
 		cardinfo3 = (LinearLayout) findViewById(R.id.cardinfo3);
-		cardinfo4 = (LinearLayout) findViewById(R.id.cardinfo4);
-		pengurus = (LinearLayout) findViewById(R.id.cardinfo4);
+		cardinfo4 = (LinearLayout) findViewById(R.id.keuaganlayout);
+		pengurus = (LinearLayout) findViewById(R.id.stukture);
 		kajian1 = (LinearLayout) findViewById(R.id.cardinfo5);
 		kajian2 = (LinearLayout) findViewById(R.id.cardinfo6);
 
@@ -142,6 +238,7 @@ MUSLIMAN LILLAH
 		layoutbg =(LinearLayout)findViewById(R.id.layout_bg);
 
         TMasjid = (TextView) this.findViewById(R.id.masjid);
+		Talamat = (TextView) this.findViewById(R.id.alamat);
 
         TDateMasehi = (TextView) findViewById(R.id.date);
 		TDateMasehi.setTextColor(Color.WHITE);
@@ -192,12 +289,24 @@ MUSLIMAN LILLAH
 
 		updateDisplay(mYear, mMonth, mDay);
 		timer.schedule(myTimerTask, 1000, 1000);
+		if(!getDataSave(setnamamasjid).isEmpty()) {
+			TMasjid.setText(getDataSave(setnamamasjid));
+		}else {TMasjid.setText(getString(R.string.mushola));}
+		if(!getDataSave(setalamat).isEmpty()) {
+			Talamat.setText(getDataSave(setalamat));
+		}else {Talamat.setText(getString(R.string.alamat));}
 
+		if(!getDataSave(setfooter).isEmpty()) {
+			Tfootnote.setText(getDataSave(setfooter));
+		}else {Tfootnote.setText(getString(R.string.kajiansubuh));}
+
+		setKeunganData();
+//TMasjid.setText(getDataSave("timerSubuh"));
 		if(test == true){ // test
 			shubuhtime(startTimetest,1000);
 			nextSholat = "Ashar  "+nAshar;
 		}
-		
+		pengurus.requestFocus();
     }
 	
 	//hitung mundur
@@ -333,8 +442,6 @@ MUSLIMAN LILLAH
 				TinfoIqomat.setText("");
 				TinfoIqomat2.setText("");
 				updateDisplay(mYear, mMonth, mDay);
-				Tnetxpray.setText("Sholat " +nextSholat);
-				Tnetxpray.setVisibility(LinearLayout.VISIBLE);
 				TinfoIqomat.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 40);
 				TinfoIqomat2.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 40);
 				nRandom =1;
@@ -345,17 +452,60 @@ MUSLIMAN LILLAH
 
 	}
 	//tampilkan info
+	//warna
+	int[] RainbowColors = {
+
+			R.color.md_deep_purple_A700,
+			R.color.white,
+			R.color.md_green_A100,
+			R.color.colorAccent,
+			R.color.white,
+			R.color.md_yellow_200,
+			R.color.md_deep_orange_A200,
+			R.color.white,
+
+	};
 	public void randominfo(){
+
+
 		int angkafokus;
 		Random intramdom = new Random();
 		angkafokus = intramdom.nextInt(randomangka.length);
 		if(statusviewcard==0){
-		if(angkafokus==0) cardinfo.requestFocus();
-		if(angkafokus==1) cardinfo2.requestFocus(); //kosong card3timer
-		if(angkafokus==3) pengurus.requestFocus();
-		if(angkafokus==4) cardinfo4.requestFocus();
-		if(angkafokus==5) kajian2.requestFocus();
-		if(angkafokus==6) kajian1.requestFocus();
+			setTimerIqomat();
+			if(Tfootnote.getVisibility() == View.VISIBLE) {
+				Tfootnote.setVisibility(LinearLayout.INVISIBLE);
+				Tnetxpray.setText("JADWAL SHOLAT HARI INI" + nextSholat);
+				Tnetxpray.setVisibility(LinearLayout.VISIBLE);
+			}else {
+				Tfootnote.setVisibility(LinearLayout.VISIBLE);
+				Tnetxpray.setText("");
+				Tnetxpray.setVisibility(LinearLayout.GONE);
+			}
+			if(angkafokus==0) {
+			cardinfo.requestFocus();
+			TMasjid.setTextColor(getResources().getColor(R.color.md_green_A700));
+		}
+		if(angkafokus==1) {
+			cardinfo2.requestFocus(); //kosong card3timer
+			TMasjid.setTextColor(getResources().getColor(R.color.colorAccent));
+		}
+		if(angkafokus==3) {
+			pengurus.requestFocus();
+			TMasjid.setTextColor(getResources().getColor(R.color.md_amber_900));
+		}
+		if(angkafokus==4) {
+			cardinfo4.requestFocus();
+			TMasjid.setTextColor(getResources().getColor(R.color.white));
+		}
+		if(angkafokus==5) {
+			kajian2.requestFocus();
+			TMasjid.setTextColor(getResources().getColor(R.color.md_light_green_A700));
+		}
+		if(angkafokus==6) {
+			kajian1.requestFocus();
+			TMasjid.setTextColor(getResources().getColor(R.color.md_yellow_A700));
+		}
 
 
 		}
@@ -369,7 +519,9 @@ MUSLIMAN LILLAH
 		{
 			//buat random
 			Random random = new Random();
-			final String randomText = ayat2[random.nextInt(ayat2.length)];
+			SpannableString localSpannableString = new SpannableString(ayat2[random.nextInt(ayat2.length)]);
+
+			final String randomText = String.valueOf(localSpannableString);
 			Random randomkas = new Random();
 			final String randomTextKas = keuangan[random.nextInt(keuangan.length)];
 
@@ -419,6 +571,8 @@ MUSLIMAN LILLAH
 						if(sSecond==20){
 							imageRandom();
 							randominfo();
+
+							updateDisplay(mYear, mMonth, mDay);
 						}
 						if(sSecond==35)imageRandom();
 						if(sSecond==50) {
@@ -433,7 +587,7 @@ MUSLIMAN LILLAH
 							stssubuh = 1;
 							if(sSecond==2){
 								audio.playClick();
-								shubuhtime(startTime2,1000);
+								shubuhtime(timersubuh,1000);
 
 							}
 							TTime.setText(THour+":"+strMinut);
@@ -449,7 +603,7 @@ MUSLIMAN LILLAH
 							shltjmt = 2;
 							if(sSecond==1){
 								audio.playClick();
-								shubuhtime(startTime3,1000);
+								shubuhtime(timerdzuhur,1000);
 							}
 
 							TTime.setText(THour+":"+strMinut);
@@ -462,7 +616,7 @@ MUSLIMAN LILLAH
 							nextSholat = "Maghrib  "+nMagrib;
 							if(sSecond==2){
 								audio.playClick();
-								shubuhtime(startTime3,1000);
+								shubuhtime(timerashar,1000);
 							}
 
 							TTime.setText(THour+":"+strMinut);
@@ -473,7 +627,7 @@ MUSLIMAN LILLAH
 						if(adzan.equalsIgnoreCase(nMagrib))//(adzanmaghrib.equalsIgnoreCase(nMagrib)) //adzan waktu sekarang
 						{
 							nextSholat = "Isya  "+nIsya;
-							if(sSecond==1)shubuhtime(startTime3,1000);
+							if(sSecond==1)shubuhtime(timermaghrib,1000);
 							if(sSecond==2)audio.playClick();
 							TTime.setText(THour+":"+strMinut);
 						}else
@@ -485,7 +639,7 @@ MUSLIMAN LILLAH
 							nextSholat = "Shubuh "+nShubuh;
 							if(sSecond==1){audio.playClick();
 
-								shubuhtime(startTime3,1000);}
+								shubuhtime(timerisya,1000);}
 							TTime.setText(THour+":"+strMinut);
 						}else	
 						{
@@ -497,7 +651,7 @@ MUSLIMAN LILLAH
 
 						if(praAdzan.equalsIgnoreCase(nShubuh)) //adzan waktu sekarang
 						{
-							Tinfo.setText(" PERSIAPAN \n ADZAN SHUBUH");
+							Tfootnote.setText(" PERSIAPAN \n ADZAN SHUBUH");
 							nRandom =4;
 							TTime.setText(THour+":"+strMinut);
 						}else
@@ -506,7 +660,7 @@ MUSLIMAN LILLAH
 						}
 						if(praAdzan.equalsIgnoreCase(nDhuhur)) //adzan waktu sekarang
 						{
-							Tinfo.setText(" PERSIAPAN \n ADZAN DZUHUR");
+							Tfootnote.setText(" PERSIAPAN \n ADZAN DZUHUR");
 							nRandom =4;
 							Tinfo.setText(THour+":"+strMinut);
 						}else
@@ -515,7 +669,7 @@ MUSLIMAN LILLAH
 						}
 						if(praAdzan.equalsIgnoreCase(nAshar)) //adzan waktu sekarang
 						{
-							Tinfo.setText(" PERSIAPAN \n ADZAN ASHAR");
+							Tfootnote.setText(" PERSIAPAN \n ADZAN ASHAR");
 							nRandom =4;
 							TTime.setText(THour+":"+strMinut);
 						}else
@@ -525,7 +679,7 @@ MUSLIMAN LILLAH
 
 						if(praAdzan.equalsIgnoreCase(nMagrib)) //adzan waktu sekarang
 						{
-							Tinfo.setText(" PERSIAPAN ADZAN MAGHRIB");
+							Tfootnote.setText(" PERSIAPAN ADZAN MAGHRIB");
 							nRandom =4;
 							TTime.setText(THour+":"+strMinut);
 						}else
@@ -535,7 +689,7 @@ MUSLIMAN LILLAH
 
 						if(praAdzan.equalsIgnoreCase(nIsya)) //adzan waktu sekarang
 						{
-							Tinfo.setText(" PERSIAPAN \n ADZAN ISYA");
+							Tfootnote.setText(" PERSIAPAN \n ADZAN ISYA");
 							nRandom =4;
 							TTime.setText(THour+":"+strMinut);
 						}else	
@@ -577,7 +731,7 @@ TTime.setText(THour+":"+strMinut);
 							}
 							//random
 							if(sSecond==59)setviewtextinfo(randomText, Tinfo, 30, "#000000","#99ffffff");
-							if(sSecond==35)setviewtextinfo("", Tinfo, 30, "##000000","#00345678");
+							//if(sSecond==35)setviewtextinfo("", Tinfo, 30, "##000000","#00345678");
 
 						};
 						//end random
@@ -622,30 +776,27 @@ TTime.setText(THour+":"+strMinut);
 	}
 	
 	// updates the date in the TextView
-    private void updateDisplay(int y, int m, int d) 
-
+    private void updateDisplay(int y, int m, int d)
 	{
+		setTimerIqomat();
 		String tglskrg = ""+d+"-"+(m+1)+"-"+y;
-    	String[] getWaktuSholat = algowkt.WaktuSholat(tglskrg,"-7'21'55","109'51'54","All",8);
+
 		shltjmt = 1;
 		nRandom = 1;
 		String infoSholat = "";
 		StringBuilder sbSholat = new StringBuilder() ;
     	String[] jawa = kal.MasehiToJawa(y, m, d);// (mDay, mMonth, mYear);
 		//tanggal masehi
-
 		int mrh = 0;
-		
+
+		String[] getWaktuSholat = algowkt.WaktuSholat(tglskrg,"-7'21'55","109'51'54","All",8);
+		//pake mtt
+		getWaktuSholat = jdwlMTTwnsb.MTTwonosoboJadwal(jawa[6],1444,Integer.valueOf(jawa[12]),Integer.valueOf(jawa[5]));
+		//String[] getWaktuSholatMTT = jdwlMTTwnsb.MTTwonosoboJadwal(jawa[6],1444,2,13);
+
 		TDateMasehi.setText(
   			//tglskrg+" "
-			jawa[0]+"  "+ jawa[4]+"  \n"
-
-			+jawa[5]+" "
-			+jawa[6]+" "
-			+jawa[7]+" \n"
-					+jawa[2]+" "
-					+jawa[11]+" "
-					+jawa[3]+" "
+			jawa[0]+"  "+ jawa[4]+"  \n" +jawa[5]+" " +jawa[6]+" " +jawa[7]+" \n" +jawa[2]+" " +jawa[11]+" " +jawa[3]+" "
 		);
 
 		//jumat jumat
@@ -665,11 +816,6 @@ TTime.setText(THour+":"+strMinut);
 		}
 
 		//display garis
-		Tnetxpray.setText(
-			new StringBuilder()
-			.append("JADWAL SHOLAT HARI INI "));	
-		//Tnetxpray.setVisibility(LinearLayout.GONE);
-		Tnetxpray.setVisibility(LinearLayout.VISIBLE);
 
 		TDateMasehi.setTextColor(Color.WHITE);
 		if(Integer.parseInt(jawa[3])<2022) {
@@ -680,7 +826,16 @@ TTime.setText(THour+":"+strMinut);
 			errorwaktu = 0;
 		}
 
-		
+nImsak    	= getWaktuSholat[2].toString();
+		nShubuh   	= getWaktuSholat[3].toString();
+		nTerbit   	= getWaktuSholat[4].toString();
+		nDhuhur   	= getWaktuSholat[6].toString();
+		nAshar    	= getWaktuSholat[7].toString();
+		nMagrib  	= getWaktuSholat[0].toString();
+		nIsya     	= getWaktuSholat[1].toString();
+
+
+		/*mtt
 		//set string sholat
 		nImsak    	= getWaktuSholat[0].toString();
 		nShubuh   	= getWaktuSholat[1].toString();
@@ -689,25 +844,51 @@ TTime.setText(THour+":"+strMinut);
 		nAshar    	= getWaktuSholat[4].toString();
 		nMagrib  	= getWaktuSholat[5].toString();
 		nIsya     	= getWaktuSholat[6].toString();
-
+ */
 		//Integer.parseInt() imsak
 		String[] subuhaplit =      nShubuh.split(":");
 		String nShubuhmnt   = subuhaplit[1].toString();
 
-		int number = Integer.parseInt(nShubuhmnt)-10;
+		//int number = Integer.parseInt(nShubuhmnt)-10;
 		Timsak.setText(nImsak);
 		Tsubuh.setText(nShubuh);
-		Tterbit.setText("0"+nTerbit);
+		Tterbit.setText(nTerbit);
 		Tdzuhur.setText(nDhuhur);
 		Tashar.setText(nAshar);
 		Tmaghrib.setText(nMagrib);
 		Tisya.setText(nIsya);
 		audio = new Audio(this.getApplicationContext());
 		//audio.playClick();
-
+		//RefreshListCart();
+		Tinfo.setText(TextPrint);
+//TMasjid.setText(getWaktuSholatMTT[3]+" "+getWaktuSholatMTT[5]+" "+getWaktuSholatMTT[7]);
 	}//end update
-	
-	
+
+
+
+	//load data infak
+	public void RefreshListCart(){
+	/*	SQLiteDatabase db = dbHelper.getReadableDatabase(); //baca db
+		String idtrx  = "INFAK";
+		Cursor cursor = db.rawQuery("SELECT * FROM penjualandetail WHERE type = '" +
+			idtrx + "'", null);
+
+		String[] daftar = new String[cursor.getCount()];
+		cursor.moveToFirst();
+		TextPrint = "";
+		for (int cc=0; cc < cursor.getCount(); cc++)
+		{
+			cursor.moveToPosition(cc);
+			daftar[cc] = cursor.getString(10).toString();
+			TextPrint = cursor.getString(5).toString()+"     \n"+
+					cursor.getString(7).toString()+" "+cursor.getString(8).toString()+" x  @"+cursor.getString(6).toString()+" = "+cursor.getString(10).toString()+"\n"
+					+TextPrint;
+		}
+		if(TextPrint.isEmpty())TextPrint ="error ";
+	 */
+
+
+	}
 	//rundom class
 	int[] randomangka = {0,1,2,3,4,5,6};
 	String[] Kajian = {
@@ -759,19 +940,18 @@ TTime.setText(THour+":"+strMinut);
 	public void imageRandom() {
 		Random imgrandom = new Random();
 		layoutbg.setBackgroundResource(images[imgrandom.nextInt(images.length)]);
+}
 
-	}
+
 	
 	
 	public void onClickJadwal(View v) {
-		Intent i = null;
+		startActivity(new Intent(this, MenuActivity.class));
+
+		/*Intent i = null;
 		switch(v.getId()){
 			case R.id.date:
-				i = new Intent(MainActivity.this, AppPreferences.class);
-
-				//MainActivity.this.startActivity(localIntent);
-				
-				//i = new Intent("AppPreferences");
+				i = new Intent(MainActivity.this, NoteActivity.class);
 				break;
 			case R.id.masjid:
 				i = new Intent("android.settings.WIFI_SETTINGS");
@@ -784,6 +964,8 @@ TTime.setText(THour+":"+strMinut);
 				break;
 		}
 		startActivity(i);
+
+		 */
 
 		
 
@@ -804,7 +986,7 @@ TTime.setText(THour+":"+strMinut);
 
 	private TextView TDateMasehi;
 	private TextView TTime;
-	private TextView TMasjid;
+	private TextView TMasjid,Talamat;
 	private TextView Tinfo, Tinfo2, TinfoIqomat,TinfoIqomat2;
 	private Button Tnetxpray;
 	private TextView Tsubuh;
@@ -847,7 +1029,7 @@ TTime.setText(THour+":"+strMinut);
 	private String nImsak;
 	private String nShubuh;
 	private String nTerbit;
-	private String nextSholat;
+	private String nextSholat ="";
 	private String resetwaktu ="mati listrik waktu tanggal \nbelum diset";
 	private int    errorwaktu =0;
 	private String nMaghribMnt;
@@ -865,12 +1047,21 @@ TTime.setText(THour+":"+strMinut);
 
 	private String infoFoot;
 	private String infoFoot2;
-
+	private String TextPrint = "";
 	private int shltjmt;
 
 	private String ifJumat;
 	//private StringBuilder sb;
 	//private StringBuilder sb2;
+
+	//timer asli
+	private long timersubuh	= 1000*60*15;
+	private long timerdzuhur	= 1000*60*10;
+	private long timerashar	= 1000*60*10;
+	private long timermaghrib	= 1000*60*10;
+	private long timerisya	= 1000*60*10;
+	private long intervalmenit = 1000*60;
+
 	private long startTime	= 1000*60*10;
 	private long interval = 1000;
 
@@ -878,15 +1069,17 @@ TTime.setText(THour+":"+strMinut);
 	private long startTime3 = 1000*60*12;
 	private long startTimetest = 1000*60*10;
 	private boolean test = false;
-
+	SQLiteHelper dbHelper;
 	private final long interval2 = 1000;
 	private long secondtimer = 0;
 	Timer timer;
 	MyTimerTask myTimerTask;
     private Calendar c;
 	static final int DATE_DIALOG_ID = 0;
-	final Kalender kal = new Kalender();
+	final KalenderKJH kal = new KalenderKJH();
 	final WaktuSholat_Tinggi algowkt = new WaktuSholat_Tinggi();
+
+	final MTTwonosobo jdwlMTTwnsb = new MTTwonosobo();
 	String[] menittimer = { 
 		"60",
 		"59",  "58","57","56","55","54","53","52","51","50",

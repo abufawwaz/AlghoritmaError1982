@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/keuaganlayout"
+        android:layout_width="@dimen/_530sdp"
+        android:layout_height="@dimen/_190sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/cardinfo"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_15ssp"
+        android:background="@drawable/textlines"
+        android:gravity="center"
+        android:text="LAPORAN INFAK"
+        android:textStyle="bold"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_5sdp"
+        >
+        <TextView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:text="JUM'AT"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:gravity="center"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:text="TANGGAL"
+            android:textColor="@color/md_black_1000"
+            android:textSize="@dimen/_12ssp"
+            android:gravity="center"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:text="PEMASUKAN"
+            android:textColor="@color/md_black_1000"
+            android:textSize="@dimen/_12ssp"
+            android:gravity="center"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:text="PENGELUARAN"
+            android:textColor="@color/md_black_1000"
+            android:textSize="@dimen/_12ssp"
+            android:gravity="center"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:text="SALDO"
+            android:textColor="@color/md_black_1000"
+            android:textSize="@dimen/_12ssp"
+            android:gravity="center"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="5dp"
+    >
+
+    <EditText
+        android:id="@+id/jumatke"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/md_black_1000"
+        android:text="JUMAT I "
+        android:textStyle="bold"
+        />
+    <EditText
+        android:id="@+id/pmskntgl"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/md_black_1000"
+        android:text="Rp. 000 "
+        android:textStyle="bold"
+        />
+    <EditText
+        android:id="@+id/pmsknnominal"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:hint="Rp. 100.000"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/md_black_1000"
+        android:text="Rp. 10000000 "
+        android:textStyle="bold"
+        />
+    <EditText
+        android:id="@+id/pglrnnominal"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:hint="Rp. 100.000"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/md_black_1000"
+        android:text="Rp. 10000000 "
+        android:textStyle="bold"
+        />
+    <EditText
+        android:id="@+id/sldonominal"
+        android:layout_width="@dimen/_90sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:hint="Rp. 100.000"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/md_black_1000"
+        android:text="Rp.  "
+        android:textStyle="bold"
+        />
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        >
+
+        <EditText
+            android:id="@+id/jumatke2"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="JUMAT II "
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/pmskntgl2"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="Rp. 000 "
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/pmsknnominal2"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:hint="Rp. 100.000"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="Rp. 10000000 "
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/pglrnnominal2"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:hint="Rp. 100.000"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="Rp. 10000000 "
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/sldonominal2"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:hint="Rp. 100.000"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="Rp.  "
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        >
+
+        <EditText
+            android:id="@+id/jumatke3"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="JUMAT III "
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/pmskntgl3"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="Rp. 000 "
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/pmsknnominal3"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:hint="Rp. 100.000"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="Rp. 10000000 "
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/pglrnnominal3"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:hint="Rp. 100.000"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="Rp. 10000000 "
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/sldonominal3"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:hint="Rp. 100.000"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="Rp.  "
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        >
+
+        <EditText
+            android:id="@+id/jumatke4"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="JUMAT IV "
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/pmskntgl4"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="Rp. 000 "
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/pmsknnominal4"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:hint="Rp. 100.000"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="Rp. 10000000 "
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/pglrnnominal4"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:hint="Rp. 100.000"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="Rp. 10000000 "
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/sldonominal4"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:hint="Rp. 100.000"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/md_black_1000"
+            android:text="Rp.  "
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_gravity="right"
+        android:gravity="right"
+        >
+        <Button
+            android:id="@+id/addInfak"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_30sdp"
+            android:background="@drawable/textlines"
+            android:textColor="@color/md_black_1000"
+            android:textSize="@dimen/_12ssp"
+            android:text="update"
+            android:onClick="onClickAddInfak"
+            android:gravity="center"
+            android:layout_gravity="right"
+            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:text="TOTAL SALDO  :"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/md_black_1000"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/saldoakhir"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:hint="Rp. 100.000"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_60sdp"
+        android:textSize="@dimen/_12ssp"
+        android:textColor="@color/md_black_1000"
+        android:text="Rp. 10000000 "
+        android:textStyle="bold"
+        />
+    </LinearLayout>
+
+</LinearLayout>

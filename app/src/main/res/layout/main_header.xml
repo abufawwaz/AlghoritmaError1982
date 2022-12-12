@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_38sdp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/title_bg"
+        >
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20.00.00"
+            android:textSize="@dimen/_22ssp"
+            android:fontFamily="@font/clock"
+            android:textStyle="bold|normal"
+            android:textColor="#ffffff"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_60sdp"
+            android:onClick="onClickJadwal"
+           android:layout_gravity="center"
+android:gravity="center"
+            />
+<Button
+    android:layout_width="@dimen/_32sdp"
+    android:layout_height="@dimen/_32sdp"
+    android:background="@drawable/logomasjid"
+    android:layout_marginLeft="10dp"
+    />
+
+        <LinearLayout
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_1sdp"
+            android:paddingLeft="@dimen/_1sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/masjid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:onClick="onClickJadwal"
+                android:text="@string/mushola"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/alamat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:onClick="onClickJadwal"
+                android:text="@string/alamat"
+                android:textColor="#e2f1fc"
+                android:textSize="@dimen/_8ssp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right|center|end"
+            android:layout_gravity="right|center_vertical|center_horizontal|end"
+
+            >
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:layout_gravity="center" android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginRight="@dimen/_3sdp"
+                android:fontFamily="@font/bahnschrift"
+                android:gravity="right|center_vertical|end"
+                android:onClick="onClickJadwal"
+                android:text="@string/infodate"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/_10ssp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

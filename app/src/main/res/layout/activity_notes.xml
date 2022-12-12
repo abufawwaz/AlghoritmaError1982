@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/layoutnotes_lv">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/newDB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textlines"
+            android:text="Buat Catatan"
+            android:onClick="onClickNew"
+            android:gravity="right|center|end"
+            android:layout_gravity="right|center_vertical|center_horizontal|end"/>
+
+        <Button
+            android:id="@+id/btndate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Waktu"
+            android:onClick="onClick"
+            android:gravity="right|center|end"
+            android:layout_gravity="right|center_vertical|center_horizontal|end"
+            android:visibility="gone"
+
+            />
+
+        <Button
+            android:id="@+id/btnwifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Wifi"
+            android:onClick="onClick"
+            android:gravity="right|center|end"
+            android:layout_gravity="right|center_vertical|center_horizontal|end"
+            android:textStyle="bold"
+            android:visibility="gone"
+
+            />
+        <Button
+            android:id="@+id/btnset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="App"
+            android:onClick="onClick"
+            android:gravity="center"
+            android:layout_gravity="center_vertical|center_horizontal|end"
+            android:textStyle="bold"
+            android:visibility="gone"
+
+            />
+
+
+
+    </LinearLayout>
+    <ListView
+        android:id="@+id/notes_lv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/_5sdp"
+        android:clipToPadding="false"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingRight="@dimen/_5sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:layout_margin="@dimen/_5sdp"
+        >
+
+    </ListView>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tips"
+        android:layout_below="@id/layoutnotes_lv"
+        android:textSize="20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Imsakiyah Digital"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingRight="@dimen/_5sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        />
+</RelativeLayout>
