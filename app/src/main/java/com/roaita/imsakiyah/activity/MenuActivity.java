@@ -73,7 +73,6 @@ public class MenuActivity extends Activity
         eAlamatMasjid   = (EditText) findViewById(R.id.alamatmasjid);
         eRunningText  = (EditText) findViewById(R.id.notefooter);
 
-
         Intent localIntent = new Intent(getApplicationContext(), SpacedService.class);
         localIntent.putExtra("KEY1", "Value to be used by the service");
         getApplicationContext().startService(localIntent);
@@ -112,6 +111,9 @@ public class MenuActivity extends Activity
                 break;
             case R.id.btnBack:
                 i = new Intent(this, MainActivity.class);
+                break;
+            case R.id.btnUpdate:
+                i = new Intent(this, UpdateActivity.class);
                 break;
         }
         startActivity(i);

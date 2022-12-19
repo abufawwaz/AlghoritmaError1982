@@ -75,7 +75,18 @@
                 android:layout_gravity="right|center_vertical|center_horizontal|end"
                 android:background="@drawable/textlines"
                 />
-
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:textSize="@dimen/_12sdp"
+                android:text="Update"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:layout_gravity="right|center_vertical|center_horizontal|end"
+                android:background="@drawable/textlines"
+                />
             <Button
                 android:id="@+id/btndate"
                 android:layout_width="@dimen/_100sdp"

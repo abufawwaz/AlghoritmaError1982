@@ -4,7 +4,8 @@ import android.annotation.SuppressLint;
 import android.app.*;
 import android.content.*;
 import android.content.pm.*;
-import android.media.AudioManager;
+import android.content.res.Configuration;
+
 import android.media.*;
 import android.provider.MediaStore.Audio.*;
 import android.os.*;
@@ -12,9 +13,8 @@ import android.text.SpannableString;
 import android.view.*;
 import android.widget.*;
 import java.util.*;
+import java.text.*;
 
-import android.icu.util.Calendar;
-import android.icu.text.*;
 import android.util.*;
 import android.graphics.*;
 
@@ -25,9 +25,9 @@ import com.roaita.imsakiyah.util.Audio;
 
 public class MainActivity extends Activity 
 {
-	private LinearLayout cardinfo, cardinfo2, cardinfo3,cardinfo4,pengurus,kajian1,kajian2,keuanganlayoout;
+	private LinearLayout cardinfo, cardinfo2, cardinfo3,cardinfo4,pengurus,kajian1,kajian2;
 	int statusviewcard =0; //timer run 1, timer of 0
-	private int focusinfo =0;
+	private final int focusinfo =0;
 
 	/** Deklarasi Edit Preferences dan mengubah data
 	 *  yang memiliki key KEY_USERNAME_SEDANG_LOGIN dengan parameter username */
@@ -114,12 +114,12 @@ public class MainActivity extends Activity
 
 	public void setTimerIqomat() {
 		if (!getDataSave(tmrshu).toString().trim().isEmpty())timersubuh=intervalmenit * Integer.parseInt(getDataSave(tmrshu));
-		if (!getDataSave(tmrdz).toString().trim().isEmpty())timersubuh=intervalmenit * Integer.parseInt(getDataSave(tmrdz));
-		if (!getDataSave(tmrAs).toString().trim().isEmpty())timersubuh=intervalmenit * Integer.parseInt(getDataSave(tmrAs));
-		if (!getDataSave(tmrmag).toString().trim().isEmpty())timersubuh=intervalmenit * Integer.parseInt(getDataSave(tmrmag));
-		if (!getDataSave(tmrIsy).toString().trim().isEmpty())timersubuh=intervalmenit * Integer.parseInt(getDataSave(tmrIsy));
-		if (!getDataSave(tmrshu).toString().trim().isEmpty())startTimetest=intervalmenit * Integer.parseInt(getDataSave(tmrshu));
+		if (!getDataSave(tmrdz).toString().trim().isEmpty())timerdzuhur=intervalmenit * Integer.parseInt(getDataSave(tmrdz));
+		if (!getDataSave(tmrAs).toString().trim().isEmpty())timerashar=intervalmenit * Integer.parseInt(getDataSave(tmrAs));
+		if (!getDataSave(tmrmag).toString().trim().isEmpty())timermaghrib=intervalmenit * Integer.parseInt(getDataSave(tmrmag));
+		if (!getDataSave(tmrIsy).toString().trim().isEmpty())timerisya=intervalmenit * Integer.parseInt(getDataSave(tmrIsy));
 
+		if (!getDataSave(tmrshu).toString().trim().isEmpty())startTimetest=intervalmenit * Integer.parseInt(getDataSave(tmrshu));
 
 		if (!getDataSave(setnamamasjid).toString().trim().isEmpty())TMasjid.setText(getDataSave(setnamamasjid));
 		if (!getDataSave(setalamat).toString().trim().isEmpty())Talamat.setText(getDataSave(setalamat));
@@ -133,7 +133,7 @@ public class MainActivity extends Activity
 
 
 	public void testtimer(View v) {
-		String waktusholat = (String) getText(v.getId());
+		@SuppressLint("ResourceType") String waktusholat = (String) getText(v.getId());
 		shubuhtime(startTimetest,1000);
 		nextSholat = "Dzuhur "+nDhuhur;
 		audio.playClick();
@@ -199,13 +199,16 @@ MUSLIMAN LILLAH
 			|| getPackageManager().hasSystemFeature(PackageManager.FEATURE_LEANBACK));
 	}
 
-    @Override
+    @SuppressLint("NewApi")
+	@Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main_layout);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
 
 		pref = getSharedPreferences("mypreferences", MODE_PRIVATE);
 		mPlayer = MediaPlayer.create(this, R.raw.alert);
@@ -221,7 +224,7 @@ MUSLIMAN LILLAH
 		cardinfo2 = (LinearLayout) findViewById(R.id.cardinfo2);
 		cardinfo3 = (LinearLayout) findViewById(R.id.cardinfo3);
 		cardinfo4 = (LinearLayout) findViewById(R.id.keuaganlayout);
-		pengurus = (LinearLayout) findViewById(R.id.stukture);
+		pengurus = (LinearLayout) findViewById(R.id.cardinfo);
 		kajian1 = (LinearLayout) findViewById(R.id.cardinfo5);
 		kajian2 = (LinearLayout) findViewById(R.id.cardinfo6);
 
@@ -307,7 +310,16 @@ MUSLIMAN LILLAH
 			nextSholat = "Ashar  "+nAshar;
 		}
 		pengurus.requestFocus();
-    }
+		UiModeManager uiModeManager = (UiModeManager) getSystemService(UI_MODE_SERVICE);
+		if (uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION) {
+		//	TMasjid.setText("Running on a TV Device");
+		} else {
+		//	TMasjid.setText("Running on a non-TV Device");
+		//		setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+		}
+//end create
+	}
 	
 	//hitung mundur
 	
@@ -539,7 +551,7 @@ MUSLIMAN LILLAH
 
 			sHour = calendar.get(Calendar.HOUR_OF_DAY);//-1;
 			THour =""+sHour;
-			if (sHour < 10) THour = "0" + sHour;
+			//if (sHour < 10) THour = "0" + sHour;
 
 			//	test
 			int	sHourmaghrib = calendar.get(Calendar.HOUR_OF_DAY);
@@ -552,6 +564,7 @@ MUSLIMAN LILLAH
 			final int sMinut3 = sMinut;
 
 			adzan = sHour+":"+sMinut2;
+			if(sHour<=9)adzan = "0"+ sHour+":"+sMinut2;
 			int sHouradzanmaghrib = sHourmaghrib;
 			final	String adzanmaghrib = sHouradzanmaghrib+":"+sMinut2;
 			int pMinut1 = sMinut + 1;
@@ -559,6 +572,7 @@ MUSLIMAN LILLAH
 			if(sMinut<=9)pMinut = "0"+pMinut1;
 
 			praAdzan = sHour+":"+pMinut;
+			if(sHour<=9)praAdzan = "0"+ sHour+":"+pMinut;
 			//final String adzanmaghrib = "A"+sHour+":"+sMinut2;
 			//final String saatMaghrib = "A"+nMagrib;
 			runOnUiThread(new Runnable()
@@ -571,7 +585,7 @@ MUSLIMAN LILLAH
 						if(sSecond==20){
 							imageRandom();
 							randominfo();
-
+							//TMasjid.setText(adzan);
 							updateDisplay(mYear, mMonth, mDay);
 						}
 						if(sSecond==35)imageRandom();
